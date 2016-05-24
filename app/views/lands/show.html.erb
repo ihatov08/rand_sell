@@ -7,7 +7,9 @@
         <p><%= @land.description %></p>
         <p><%= @land.price %>万円</p>
         <p><%= @land.area %>㎡</p>
+        <% if current_user.id == @land.user_id %>
         <p><%= link_to "編集する", edit_land_path(@land), class: "btn btn-primary", role: "button" %> <%= link_to "削除する", land_path(@land), method: :delete, class: "btn btn-danger", role: "button", data: { confirm: "本当に削除しますか？"} %></p>
+        <% end %>
       </div>
     </div>
   </div>

@@ -8,7 +8,8 @@
         <p><%= land.description %></p>
         <p><%= land.price %>万円</p>
         <p><%= land.area %>㎡</p>
-        <p><%= link_to "詳細", land_path(land), class: "btn btn-primary", role: "button" %></p>
+        <p>出品者：<%= land.user.first_name %></p>
+        <p><%= image_tag land.user.image_url, width: 40, style: "padding-right:10px" %><%= link_to "詳細", land_path(land), class: "btn btn-primary", role: "button" %></p>
       </div>
     </div>
   </div>
