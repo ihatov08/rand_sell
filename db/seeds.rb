@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+100.times do |index|
+  Land.create(address: "八幡平市#{index}丁目", area: rand(100) + 100, price: rand(100) + 1000, description: "#{index}番目におすすめの物件です", image_url: "http://blog-imgs-52.fc2.com/m/a/n/manihachi/IMG_2869.jpg" )
+end
