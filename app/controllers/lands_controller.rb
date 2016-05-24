@@ -18,6 +18,8 @@ class LandsController < ApplicationController
 
   def show
     @land = Land.find(params[:id])
+    @comment = Comment.new
+    @comments = @land.comments
   end
 
   def edit
