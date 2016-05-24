@@ -17,6 +17,16 @@
   </div>
 </div>
 
+<% if user_signed_in? %>
+  <% if current_user.likes.find_by(land_id: @land.id) %>
+    <p>いいね済み</p>
+  <% else %>
+    <p><%= link_to 'いいね', like_path(@land.id), method: :post %></p>
+  <% end %>
+<% else %>
+  <p>いいね機能を利用するにはログインしてください</p>
+<% end %>
+
 <hr />
 <div class="row">
   <h2>コメント一覧</h2>
@@ -39,6 +49,7 @@
 
 <hr />
 <h1>コメントを投稿する</h1>
+<% if user_signed_in? %>
 <%= form_for(@comment, url: { controller: :comments, action: :create }) do |f| %>
   <% if @comment.errors.any? %>
     <div class="alert alert-danger">
@@ -61,3 +72,6 @@
     <% end %>
   </div>
 </div>
+<% else %>
+  <p>コメント機能を利用するにはログインしてください</p>
+<% end %>

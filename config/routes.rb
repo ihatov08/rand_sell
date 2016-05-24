@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root 'lands#index'
   devise_for :users
   resources :lands
+  post '/like/:land_id' => 'lands#like', as: 'like'
+  delete '/unlike/:land_id' => 'lands#unlike', as: 'unlike'
   resources :comments, only: [:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -42,9 +42,19 @@ class LandsController < ApplicationController
     redirect_to lands_url
   end
 
+  def like
+    @land = Land.find(params[:land_id])
+    @like = Like.new(user_id: current_user.id, land_id: @land.id)
+    @like.save
+    redirect_to @land
+  end
+
+  def unlike
+  end
+
   private
 
   def land_params
-    params.require(:land).permit(:address, :area, :price, :description, :image_url)
+    params.require(:land).permit(:address, :area, :price, :description, :image_url, :user_id, :land_id)
   end
 end
