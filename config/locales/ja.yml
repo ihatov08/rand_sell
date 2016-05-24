@@ -1,6 +1,15 @@
 ---
 ja:
   activerecord:
+    models:
+      land: 土地
+    attributes:
+      land:
+        address: 住所
+        area: 面積
+        price: 価格
+        description: 詳細
+        image_url: 土地画像
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
