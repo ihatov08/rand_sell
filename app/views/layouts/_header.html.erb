@@ -38,6 +38,7 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
+          <li><%= current_user.first_name %></li>
           <li><%= link_to "設定変更", edit_user_registration_path %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
         <% else %>
