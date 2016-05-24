@@ -15,5 +15,5 @@ User.create(first_name: "ルー", given_name: "大柴", image_url: "http://stat.
 end
 
 300.times do |index|
-  Comment.create(body: "#{index}回目のコメントです。この物件いいね。", land_id: rand(100) + 1)
+  Comment.create(body: "#{index}回目のコメントです。この物件いいね。", land_id: rand(100) + 1, user_id: rand(3) + 1 )
 end
