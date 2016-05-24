@@ -50,6 +50,10 @@ class LandsController < ApplicationController
   end
 
   def unlike
+    @land = Land.find(params[:land_id])
+    @like = current_user.likes.find_by(land_id: @land.id)
+    @like.destroy
+    redirect_to @land
   end
 
   private
