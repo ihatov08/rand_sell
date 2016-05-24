@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root "lands#index"
+  root 'lands#index'
+  devise_for :users
   resources :lands
   resources :comments, only: [:create, :destroy]
 
