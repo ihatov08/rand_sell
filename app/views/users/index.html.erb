@@ -1,0 +1,11 @@
+<h1>ユーザー一覧</h1>
+<% @users.each do |user| %>
+<div class="media">
+  <div class="media-left media-middle">
+    <%= image_tag user.image_url, class: "media-object", width: 100 %>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= user.full_name %></h4>
+  </div>
+</div>
+<% end %>

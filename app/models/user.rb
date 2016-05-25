@@ -6,4 +6,9 @@ class User < ActiveRecord::Base
   has_many :lands
   has_many :comments
   has_many :likes
+  has_many :like_lands, through: :likes, source: :land
+  def full_name
+    full_name = first_name + given_name
+    full_name
+  end
 end

@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+
   root 'lands#index'
   devise_for :users
+  resources :users, only: [:index, :show, :edit, :update] do
+    member do
+      get :like_lands
+    end
+  end
   resources :lands
   post '/like/:land_id' => 'lands#like', as: 'like'
   delete '/unlike/:land_id' => 'lands#unlike', as: 'unlike'

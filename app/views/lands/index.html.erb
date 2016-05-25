@@ -4,18 +4,21 @@
    <div class="thumbnail">
       <%= image_tag land.image_url %>
       <div class="caption">
-        <h3><%= land.address %></h3>
-        <p><%= land.description %></p>
-        <p><%= land.price %>万円</p>
-        <p><%= land.area %>㎡</p>
-        <p>出品者：<%= land.user.first_name %></p>
-        <p><%= image_tag land.user.image_url, width: 40, style: "padding-right:10px" %><%= link_to "詳細", land_path(land), class: "btn btn-primary", role: "button" %>
-        <span class="
-glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>×<%= land.likes.count %></p>
+        <ul class="list-group">
+          <li class="list-group-item"><h5><%= land.address %></h5></li>
+          <li class="list-group-item"><%= land.description %></li></p>
+          <p><%= land.price %>万円</p>
+          <p><%= land.area %>㎡</p>
+          <p>出品者：<%= land.user.full_name %></p>
+          <p><%= link_to "詳細", land_path(land), class: "btn btn-primary", role: "button" %>
+          <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>×<%= land.likes.count %></p>
+        </ul>
       </div>
     </div>
   </div>
   <% end %>
 </div>
 
-<%= paginate @lands %>
+<div class="paginate">
+  <%= paginate @lands %>
+</div>

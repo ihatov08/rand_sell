@@ -1,0 +1,20 @@
+<h1>いいねしている土地一覧</h1>
+<div class="row">
+  <% @lands.each do |land| %>
+  <div class="col-xs-6 col-md-3">
+   <div class="thumbnail">
+      <%= image_tag land.image_url %>
+      <div class="caption">
+        <h3><%= land.address %></h3>
+        <p><%= land.description %></p>
+        <p><%= land.price %>万円</p>
+        <p><%= land.area %>㎡</p>
+        <p>出品者：<%= land.user.first_name %></p>
+        <p><%= image_tag land.user.image_url, width: 40, style: "padding-right:10px" %><%= link_to "詳細", land_path(land), class: "btn btn-primary", role: "button" %>
+        <span class="
+glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>×<%= land.likes.count %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
