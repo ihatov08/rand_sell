@@ -4,7 +4,7 @@
       <%= image_tag @land.image_url %>
       <div class="caption">
         <h3><%= @land.address %></h3>
-        <p><%= @land.description.trundate(15) %></p>
+        <p><%= @land.description.truncate(15) %></p>
         <p><%= @land.price %>万円</p>
         <p><%= @land.area %>㎡</p>
         <% if user_signed_in? %>
@@ -17,18 +17,20 @@
   </div>
 </div>
 
-<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>×
-<%= @land.likes.count %>
+<div class="like">
+  <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>×
+  <%= @land.likes.count %>
 
-<% if user_signed_in? %>
-  <% if current_user.likes.find_by(land_id: @land.id) %>
-    <p><%= link_to 'いいねを取り消す', unlike_path(@land.id), method: :delete, class: 'btn btn-danger' %></p>
+  <% if user_signed_in? %>
+    <% if current_user.likes.find_by(land_id: @land.id) %>
+      <p><%= link_to 'いいねを取り消す', unlike_path(@land.id), method: :delete, class: 'btn btn-danger' %></p>
+    <% else %>
+      <p><%= link_to 'いいね', like_path(@land.id), method: :post, class: 'btn btn-primary' %></p>
+    <% end %>
   <% else %>
-    <p><%= link_to 'いいね', like_path(@land.id), method: :post, class: 'btn btn-primary' %></p>
+    <p>いいね機能を利用するにはログインしてください</p>
   <% end %>
-<% else %>
-  <p>いいね機能を利用するにはログインしてください</p>
-<% end %>
+</div>
 
 <hr />
 <div class="row">
@@ -73,8 +75,8 @@
       <%= f.hidden_field :land_id, value: @land.id %>
       <%= f.submit "コメントする", class: "btn btn-primary" %>
     <% end %>
-  </div>
-</div>
 <% else %>
   <p>コメント機能を利用するにはログインしてください</p>
 <% end %>
+</div>
+</div>
