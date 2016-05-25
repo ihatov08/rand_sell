@@ -6,7 +6,7 @@
       <div class="caption">
         <ul class="list-group">
           <li class="list-group-item"><h5><%= land.address %></h5></li>
-          <li class="list-group-item"><%= land.description %></li></p>
+          <li class="list-group-item"><%= land.description.truncate(15) %></li></p>
           <p><%= land.price %>万円</p>
           <p><%= land.area %>㎡</p>
           <p>出品者：<%= land.user.full_name %></p>
