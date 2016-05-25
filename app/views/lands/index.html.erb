@@ -5,11 +5,11 @@
       <%= image_tag land.image_url, style: "height:200px" %>
       <div class="caption">
         <ul class="list-group">
-          <li class="list-group-item"><h5><%= land.address %></h5></li>
-          <li class="list-group-item"><%= land.description.truncate(15) %></li></p>
-          <p><%= land.price %>万円</p>
-          <p><%= land.area %>㎡</p>
-          <p>出品者：<%= land.user.full_name %></p>
+          <li class="list-group-item"><h5>住所：<%= land.address %></h5></li>
+          <li class="list-group-item">詳細：<%= land.description.truncate(15) %></li></p>
+          <li class="list-group-item"><p>価格：<%= land.price %>万円</p></li>
+          <li class="list-group-item"><p>面積：<%= land.area %>㎡</p></li>
+          <li class="list-group-item"><p>出品者：<%= land.user.full_name %></p></li>
           <p><%= link_to "詳細", land_path(land), class: "btn btn-primary", role: "button" %>
           <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>×<%= land.likes.count %></p>
         </ul>
