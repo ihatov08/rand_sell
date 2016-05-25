@@ -1,7 +1,7 @@
 class LandsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   def index
-    @lands = Land.all
+    @lands = Land.page(params[:page]).per(8)
   end
 
   def new
