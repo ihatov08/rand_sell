@@ -9,7 +9,7 @@ class LandsController < ApplicationController
   end
 
   def create
-    @land = Land.new(land_params)
+    @land = current_user.lands.build(land_params)
     if @land.save
       redirect_to @land
     else
