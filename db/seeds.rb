@@ -12,7 +12,12 @@ User.create(first_name: "ルー", given_name: "大柴", image_url: "http://stat.
 
 100.times do |index|
   Land.create(address: "八幡平市#{index}丁目", area: rand(100) + 100, price: rand(100) + 1000, description: "#{index}番目におすすめの物件です", image_url: "http://blog-imgs-52.fc2.com/m/a/n/manihachi/IMG_2869.jpg", user_id: rand(3) + 1)
+  Land.create(address: "八幡平市#{index + 50}丁目", area: rand(100) + 100, price: rand(100) + 2000, description: "#{index}番目におすすめの物件です", image_url: "http://www.appi.co.jp/wp/wp-content/uploads/2014/04/stay_anx.jpg", user_id: rand(3) + 1)
+  Land.create(address: "八幡平市#{index + 50}丁目", area: rand(100) + 100, price: rand(100) + 2000, description: "#{index}番目におすすめの物件です", image_url: "http://stat.ameba.jp/user_images/20111229/20/chapel-hill/83/a6/j/o0448033611702150083.jpg", user_id: rand(3) + 1)
+
 end
+
+
 
 300.times do |index|
   Comment.create(body: "#{index}回目のコメントです。この物件いいね。", land_id: rand(100) + 1, user_id: rand(3) + 1 )

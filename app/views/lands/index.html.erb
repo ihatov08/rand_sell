@@ -2,7 +2,7 @@
   <% @lands.each do |land| %>
   <div class="col-xs-6 col-md-3">
    <div class="thumbnail">
-      <%= image_tag land.image_url %>
+      <%= image_tag land.image_url, style: "height:200px" %>
       <div class="caption">
         <ul class="list-group">
           <li class="list-group-item"><h5><%= land.address %></h5></li>
