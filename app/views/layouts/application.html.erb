@@ -107,8 +107,7 @@
     <header class="jumbotron">
       <div class="container">
         <h1>Land Sell</h1>
-        <p>このサイトは八幡平市専用の、土地を売りたい方のためのマッチングサイトです。<br/>スパルタキャンプ in hachimantai Ruby on Rails編のために開発されました。
-        <br/>オリジナルサービスを作れるようになりましょう！</p>
+        <p>このサイトは八幡平市専用の、土地を売りたい方のためのマッチングサイトです。<br/>スパルタキャンプ in hachimantai Ruby on Rails編のために開発されました。</p>
         <% unless user_signed_in? %>
         <p><%= link_to '土地を出品する', new_user_registration_path, class: "btn btn-lg midashi-btn", role: "button" %></p>
         <% end %>
