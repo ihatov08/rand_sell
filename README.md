@@ -34,7 +34,9 @@ bundle exec rake db:seed
 
 ## server
 
+```
 rails s
+```
 
 ## Access
 
