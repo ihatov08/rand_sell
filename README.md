@@ -5,11 +5,11 @@ application up and running.
 
 Things you may want to cover:
 
-* Rails version
+## Rails version
 
 'rails', '4.2.4'
 
-* Configuration
+## Configuration
 
 clone project
 
@@ -20,25 +20,27 @@ git clone git@github.com:ihatov08/rand_sell.git
 cd rand_sell
 ```
 
-* Database creation & migration
+## Database creation & migration
 
 ```
 bundle exec rake db:migrate
 ```
 
-* Database initialization with seed data
+## Database initialization with seed data
 
 ```
 bundle exec rake db:seed
 ```
 
-* server
+## server
 
 rails s
 
-* Access
+## Access
 
+```
 http://localhost:3000
+```
 
 * ...
 
